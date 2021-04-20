@@ -7,18 +7,6 @@ inner join default.enc_medical as clms on
 
 -- COMMAND ----------
 
-select format_number(sum(Paid),"0,000") as Paid from mcs_historic.claims_202012
-
--- COMMAND ----------
-
-select service_Category, format_number(sum(Paid),"0,000") as Paid from mcs_prod.claims group by 1
-
--- COMMAND ----------
-
-select format_number(sum(Paid),"0,000") as Paid from mcs_dev.mcs_base_claims_20201005_1544
-
--- COMMAND ----------
-
 select
   Incurred_Month
   ,substr(ClaimID,1,length(ClaimID)-1) as ClaimID
